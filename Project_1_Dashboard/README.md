@@ -35,7 +35,7 @@ My final dashboard file is located here:
 ### Charts
 
 #### Median Salaries by Job Title – Bar Chart
-
+![Median_Salaries_by_Job_Title](assets/Excel_Project_1_DashBoard_Bar_Chart_1.png)
 - Excel Feature: Bar chart with formatted salary values
 - Design Choice: Used a horizontal bar chart for better readability and visual comparison
 - Data Displayed: Median salary by job title
@@ -43,7 +43,7 @@ My final dashboard file is located here:
 - Insight: Senior-level roles and engineering positions tend to offer higher salaries than analyst roles
 
 #### Median Salaries by Country – Map Chart
-
+![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Map_Chart_1.png)
 - Excel Feature: Excel’s built-in map chart feature
 - Design Choice: Color-coded regions based on salary range
 - Data Displayed: Median salary by country
@@ -51,7 +51,7 @@ My final dashboard file is located here:
 - Insight: This chart reveals global salary disparities, making it easy to spot higher- and lower-paying regions
 
 #### Median Salaries by Job Schedule Type – Bar Chart
-
+![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Bar_Chart_2.png)
 - Excel Feature: Bar chart
 - Design Choice: Horizontal layout for easy comparison
 - Data Displayed: Median salary by job schedule type (e.g., full-time, part-time, contract)
