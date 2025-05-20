@@ -76,6 +76,12 @@ To support dynamic filtering and data validation, a cleaned list of job schedule
 
 This cleaned list is also used to support the COUNT and MEDIAN formulas described below.
 
+Background Table:
+![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png)
+
+Dashboard Implementation:
+![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
+
 #### Job Count Based on Multiple Criteria
 
 With a clean list of job types established, I used the following formula to count how many job listings matched a given combination of job title, country, and schedule type.
@@ -94,6 +100,12 @@ With a clean list of job types established, I used the following formula to coun
 - Output: Total number of job listings matching selected criteria
 - Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
 - Note: Relies on the assumption that each job listing has a non-zero salary field
+
+Background Table:
+![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Count_Background_Table.png)
+
+Dashboard Implementation:
+![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
 
 #### Median Salary Calculations
 
@@ -148,6 +160,12 @@ Building on the filtered data and job counts, I created three separate `MEDIAN()
 - Output: Used in the bar chart comparing salary by job type
 
 Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the dashboard.
+
+Background Table:
+![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Median_Salary_Background_Table.png)
+
+Dashboard Implementation:
+![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Median_Salary_Dashboard_Output.png)
 
 #### Dynamic Highlighting in Bar Charts
 
