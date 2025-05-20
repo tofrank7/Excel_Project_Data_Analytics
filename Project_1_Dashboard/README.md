@@ -81,7 +81,7 @@ This cleaned list is also used to support the `COUNT()` and `MEDIAN()` formulas 
 </p>
 
 <p><strong>Dashboard Implementation:</strong><br>
-<img src="assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png" alt="Job Schedule Type Dashboard Implementation">
+<img src="assets/Excel_Project_1_DashBoard_Bar_Chart_2.png" alt="Job Schedule Type Dashboard Implementation">
 </p>
 
 #### Job Count Based on Multiple Criteria
