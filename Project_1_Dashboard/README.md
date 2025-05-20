@@ -29,3 +29,31 @@ The dataset used for this dashboard includes up-to-date job salary information r
 - Work Schedules (Full-Time, Contract, etc.)
 - Required Skills
 
+## Dashboard Build
+
+### Charts
+
+#### Median Salaries by Job Title – Bar Chart
+
+- Excel Feature: Bar chart with formatted salary values
+- Design Choice: Used a horizontal bar chart for better readability and visual comparison
+- Data Displayed: Median salary by job title
+- Data Organization: Sorted by descending median salary
+- Insight: Senior-level roles and engineering positions tend to offer higher salaries than analyst roles
+
+#### Median Salaries by Country – Map Chart
+
+- Excel Feature: Excel’s built-in map chart feature
+- Design Choice: Color-coded regions based on salary range
+- Data Displayed: Median salary by country
+- Visual Enhancement: Geographic trends are more apparent at a glance
+- Insight: This chart reveals global salary disparities, making it easy to spot higher- and lower-paying regions
+
+#### Median Salaries by Job Schedule Type – Bar Chart
+
+- Excel Feature: Bar chart
+- Design Choice: Horizontal layout for easy comparison
+- Data Displayed: Median salary by job schedule type (e.g., full-time, part-time, contract)
+- Data Organization: Values sorted for clarity
+- Insight: [To be added later—e.g., "Full-time positions generally pay more than contract roles"]
+
