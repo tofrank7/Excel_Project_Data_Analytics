@@ -67,7 +67,7 @@ To support dynamic filtering and data validation, a cleaned list of job schedule
 **Filtered Job Schedule Types Formula**
 
 ```excel
-=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
+=FILTER(J2#,NOT(ISNUMBER(SEARCH("and",J2#)))*(J2#<>0))
 ```
 - Purpose: Removes entries with "and", commas, and blank/zero values
 - Output: A clean list of distinct job types (e.g., Full Time, Contract)
