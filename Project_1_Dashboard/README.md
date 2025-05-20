@@ -57,3 +57,72 @@ The dataset used for this dashboard includes up-to-date job salary information r
 - Data Organization: Values sorted for clarity
 - Insight: [To be added later—e.g., "Full-time positions generally pay more than contract roles"]
 
+### Formulas and Functions
+
+#### Median Salary Calculations
+
+To display accurate and dynamic salary data on the dashboard, three separate median salary formulas were created based on user-selected filters: by job title, by country, and by job schedule type. All formulas use array logic to filter and compute values based on multiple criteria.
+
+**1. Median Salary by Job Title**
+
+```excel
+=MEDIAN(
+  IF(
+    (jobs[job_title_short]=A2)*
+    (jobs[salary_year_avg]<>0)*
+    (jobs[job_country]=country)*
+    (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),
+    jobs[salary_year_avg]
+  )
+)
+```
+- Filters: Selected job title, country, and job schedule type
+- Output: Used in the bar chart comparing salaries by job title
+
+**2. Median Salary by Country**
+
+```excel
+=MEDIAN(
+ IF(
+   (jobs[job_country]=A2)*
+   (jobs[salary_year_avg]<>0)*
+   (jobs[job_title_short]=title)*
+   (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),
+   jobs[salary_year_avg]
+ )
+)
+```
+- Filters: Selected country, job title, and schedule type
+- Output: Used in the map chart showing salaries across countries
+
+- **3. Median Salary by Job Schedule Type**
+
+```excel
+=MEDIAN(
+  IF(
+    (jobs[job_title_short]=title)*
+    (jobs[salary_year_avg]<>0)*
+    (jobs[job_country]=country)*
+    (ISNUMBER(SEARCH(A2,jobs[job_schedule_type]))),
+    jobs[salary_year_avg]
+  )
+)
+```
+- Filters: Selected job schedule type, job title, and country
+- Output: Used in the bar chart comparing salary by job type
+
+#### Filtered List of Job Schedule Types
+
+To support dynamic filtering and data validation, a cleaned list of job schedule types was generated using the `FILTER()` function. This ensured dropdowns and formulas only referenced valid, distinct schedule types.
+
+**Filtered Job Schedule Types Formula**
+
+```excel
+=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
+```
+- Purpose: Removes entries with "and", commas, and blank/zero values
+- Output: A clean list of distinct job types (e.g., Full Time, Contract)
+- Use Case: Supports dashboard filtering and improves dropdown usability
+- Benefit: Ensures that users interact only with valid, meaningful job types
+
+
