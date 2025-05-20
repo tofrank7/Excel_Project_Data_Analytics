@@ -95,7 +95,7 @@ To display accurate and dynamic salary data on the dashboard, three separate med
 - Filters: Selected country, job title, and schedule type
 - Output: Used in the map chart showing salaries across countries
 
-- **3. Median Salary by Job Schedule Type**
+**3. Median Salary by Job Schedule Type**
 
 ```excel
 =MEDIAN(
@@ -125,4 +125,57 @@ To support dynamic filtering and data validation, a cleaned list of job schedule
 - Use Case: Supports dashboard filtering and improves dropdown usability
 - Benefit: Ensures that users interact only with valid, meaningful job types
 
+#### Job Count Based on Multiple Criteria
 
+In addition to calculating median salaries, a `COUNT()` formula was used to determine how many job listings match a specific combination of filters: job title, country, and job schedule type. This formula adds contextual depth by revealing how prevalent certain job combinations are.
+
+**Job Count Formula**
+
+```excel
+=COUNT(
+ IF(
+   (jobs[job_country]=country)*
+   (jobs[job_title_short]=A2)*
+   (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),
+   jobs[salary_year_avg]
+ )
+)
+```
+- Filters: Country, job title, and job schedule type
+- Output: Total number of job listings matching selected criteria
+- Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
+- Note: Relies on the assumption that each job listing has a non-zero salary field
+
+#### Dynamic Highlighting in Bar Charts
+
+To make the dashboard more interactive and visually informative, dynamic chart highlighting was implemented. This technique uses helper columns to visually emphasize the selected job title or schedule type in a darker color while keeping the rest of the comparison data in lighter bars.
+
+The effect was achieved using conditional logic:
+```excel
+=IF($D2<>title,$E2,NA())  ← Light bars for non-selected values  
+=IF($D2=title,$E2,NA())   ← Dark
+```
+- $D2 contains the current job title in the sorted list
+- title refers to the user’s selected job title from the dashboard
+- E2 is the corresponding median salary
+
+When used as data series in a bar chart, this logic ensures only the selected item appears in a darker color—enhancing focus without removing context.
+
+### Data Validation
+
+To ensure user inputs remain consistent and accurate throughout the dashboard, data validation was applied to key dropdown selections, including Job Title, Country, and Job Schedule Type.
+
+**Purpose of Data Validation**
+- Restricts user input to a predefined list of valid options
+- Prevents entry errors or inconsistent data selections
+- Supports dynamic formulas and visuals by maintaining clean, reliable input values
+
+**How It Was Implemented**
+- The cleaned list of job schedule types (created with the `FILTER()` function) was used as the source for the Job Schedule Type dropdown
+- Similar lists were created or referenced for Job Title and Country
+- Excel's Data Validation feature was used to assign these lists to dropdown cells in the dashboard interface
+
+**Impact on Dashboard**
+- Improved usability and interactivity
+- Ensured only valid filters were applied to formulas and charts
+- Reduced risk of formula errors due to invalid or mismatched user input
