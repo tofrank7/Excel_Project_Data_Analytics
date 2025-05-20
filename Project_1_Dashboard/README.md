@@ -40,7 +40,7 @@ My final dashboard file is located here:
 - Design Choice: Used a horizontal bar chart for better readability and visual comparison
 - Data Displayed: Median salary by job title
 - Data Organization: Sorted by descending median salary
-- Insight: Senior-level roles and engineering positions tend to offer higher salaries than analyst roles
+- Insight: This chart helps users analyze how salaries differ across job titles based on selected country and schedule type—useful for identifying roles with higher earning potential.
 
 #### Median Salaries by Country – Map Chart
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Map_Chart_1.png)
@@ -48,7 +48,7 @@ My final dashboard file is located here:
 - Design Choice: Color-coded regions based on salary range
 - Data Displayed: Median salary by country
 - Visual Enhancement: Geographic trends are more apparent at a glance
-- Insight: This chart reveals global salary disparities, making it easy to spot higher- and lower-paying regions
+- Insight: This map allows users to visualize salary differences across countries for a given role and job type—highlighting regional patterns in compensation.
 
 #### Median Salaries by Job Schedule Type – Bar Chart
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Bar_Chart_2.png)
@@ -56,7 +56,7 @@ My final dashboard file is located here:
 - Design Choice: Horizontal layout for easy comparison
 - Data Displayed: Median salary by job schedule type (e.g., full-time, part-time, contract)
 - Data Organization: Values sorted for clarity
-- Insight: [To be added later—e.g., "Full-time positions generally pay more than contract roles"]
+- Insight: This chart enables users to compare how compensation varies by job schedule type for a specific role and country—helpful for understanding the relationship between employment type and pay.
 
 ### Formulas and Functions
 
