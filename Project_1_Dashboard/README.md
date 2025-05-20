@@ -69,12 +69,12 @@ To support dynamic filtering and data validation, a cleaned list of job schedule
 ```excel
 =FILTER(J2#,NOT(ISNUMBER(SEARCH("and",J2#)))*(J2#<>0))
 ```
-- Purpose: Removes entries with "and", commas, and blank/zero values
+- Purpose: Removes entries that contain the word "and" and excludes blank or zero values
 - Output: A clean list of distinct job types (e.g., Full Time, Contract)
 - Use Case: Supports dashboard filtering and improves dropdown usability
 - Benefit: Ensures that users interact only with valid, meaningful job types
 
-This cleaned list is also used to support the COUNT and MEDIAN formulas described below.
+This cleaned list is also used to support the `COUNT()` and `MEDIAN()` formulas described below.
 
 <p><strong>Background Table:</strong><br>
 <img src="assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png" alt="Job Schedule Type Background Table">
