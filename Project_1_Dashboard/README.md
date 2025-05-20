@@ -8,11 +8,6 @@ The dataset was provided by Luke Barousse as part of his Excel for Data Analytic
 
 The goal of this project was to analyze this dataset and design a functional, interactive dashboard using Excel—equipping users with the ability to filter salary insights by role, location, and job type.
 
-### Dashboard File
-
-My final dashboard file is located here:  
-[Excel_Project_1_Dashboard.xlsx](Excel_Project_1_Dashboard.xlsx)
-
 ### Excel Skills Used
 
 The following Excel features were used in this project:
@@ -28,6 +23,11 @@ The dataset used for this dashboard includes up-to-date job salary information r
 - Locations (by Country)
 - Work Schedules (Full-Time, Contract, etc.)
 - Required Skills
+
+### Dashboard File
+
+My final dashboard file is located here:  
+[Excel_Project_1_Dashboard.xlsx](Excel_Project_1_Dashboard.xlsx)
 
 ## Dashboard Build
 
@@ -59,9 +59,44 @@ The dataset used for this dashboard includes up-to-date job salary information r
 
 ### Formulas and Functions
 
+#### Filtered List of Job Schedule Types
+
+To support dynamic filtering and data validation, a cleaned list of job schedule types was generated using the `FILTER()` function. This ensured dropdowns and formulas only referenced valid, distinct schedule types.
+
+**Filtered Job Schedule Types Formula**
+
+```excel
+=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
+```
+- Purpose: Removes entries with "and", commas, and blank/zero values
+- Output: A clean list of distinct job types (e.g., Full Time, Contract)
+- Use Case: Supports dashboard filtering and improves dropdown usability
+- Benefit: Ensures that users interact only with valid, meaningful job types
+
+This cleaned list is also used to support the COUNT and MEDIAN formulas described below.
+
+#### Job Count Based on Multiple Criteria
+
+With a clean list of job types established, I used the following formula to count how many job listings matched a given combination of job title, country, and schedule type.
+
+```excel
+=COUNT(
+ IF(
+   (jobs[job_country]=country)*
+   (jobs[job_title_short]=A2)*
+   (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),
+   jobs[salary_year_avg]
+ )
+)
+```
+- Filters: Country, job title, and job schedule type
+- Output: Total number of job listings matching selected criteria
+- Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
+- Note: Relies on the assumption that each job listing has a non-zero salary field
+
 #### Median Salary Calculations
 
-To display accurate and dynamic salary data on the dashboard, three separate median salary formulas were created based on user-selected filters: by job title, by country, and by job schedule type. All formulas use array logic to filter and compute values based on multiple criteria.
+Building on the filtered data and job counts, I created three separate MEDIAN() formulas to calculate salary insights based on user-selected criteria. These formulas power the bar and map charts in the dashboard.
 
 **1. Median Salary by Job Title**
 
@@ -111,55 +146,21 @@ To display accurate and dynamic salary data on the dashboard, three separate med
 - Filters: Selected job schedule type, job title, and country
 - Output: Used in the bar chart comparing salary by job type
 
-#### Filtered List of Job Schedule Types
-
-To support dynamic filtering and data validation, a cleaned list of job schedule types was generated using the `FILTER()` function. This ensured dropdowns and formulas only referenced valid, distinct schedule types.
-
-**Filtered Job Schedule Types Formula**
-
-```excel
-=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
-```
-- Purpose: Removes entries with "and", commas, and blank/zero values
-- Output: A clean list of distinct job types (e.g., Full Time, Contract)
-- Use Case: Supports dashboard filtering and improves dropdown usability
-- Benefit: Ensures that users interact only with valid, meaningful job types
-
-#### Job Count Based on Multiple Criteria
-
-In addition to calculating median salaries, a `COUNT()` formula was used to determine how many job listings match a specific combination of filters: job title, country, and job schedule type. This formula adds contextual depth by revealing how prevalent certain job combinations are.
-
-**Job Count Formula**
-
-```excel
-=COUNT(
- IF(
-   (jobs[job_country]=country)*
-   (jobs[job_title_short]=A2)*
-   (ISNUMBER(SEARCH(type,jobs[job_schedule_type]))),
-   jobs[salary_year_avg]
- )
-)
-```
-- Filters: Country, job title, and job schedule type
-- Output: Total number of job listings matching selected criteria
-- Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
-- Note: Relies on the assumption that each job listing has a non-zero salary field
+Note: type, title, country, and A2 refer to user-selected values in the dashboard.
 
 #### Dynamic Highlighting in Bar Charts
 
-To make the dashboard more interactive and visually informative, dynamic chart highlighting was implemented. This technique uses helper columns to visually emphasize the selected job title or schedule type in a darker color while keeping the rest of the comparison data in lighter bars.
+To improve how users interpret the salary data from the calculations above, I used helper columns to implement visual highlighting in the bar charts. This approach emphasizes the selected job title or schedule type using a darker color bar, while showing all other categories in lighter colors for context.
 
-The effect was achieved using conditional logic:
 ```excel
 =IF($D2<>title,$E2,NA())  ← Light bars for non-selected values  
-=IF($D2=title,$E2,NA())   ← Dark
+=IF($D2=title,$E2,NA())   ← Dark bar for selected value
 ```
 - $D2 contains the current job title in the sorted list
 - title refers to the user’s selected job title from the dashboard
 - E2 is the corresponding median salary
 
-When used as data series in a bar chart, this logic ensures only the selected item appears in a darker color—enhancing focus without removing context.
+When these formulas are used as separate data series in a chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
 
 ### Data Validation
 
@@ -179,3 +180,7 @@ To ensure user inputs remain consistent and accurate throughout the dashboard, d
 - Improved usability and interactivity
 - Ensured only valid filters were applied to formulas and charts
 - Reduced risk of formula errors due to invalid or mismatched user input
+
+## Conclusion
+
+This project showcased how Excel can be used to create dynamic, interactive dashboards for real-world data analysis. Through a combination of formulas, data validation, and chart formatting, I was able to explore and visualize salary trends across job titles, countries, and schedule types—tools I’ll continue to build on in future analytics work.
