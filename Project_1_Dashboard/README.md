@@ -76,8 +76,9 @@ To support dynamic filtering and data validation, a cleaned list of job schedule
 
 This cleaned list is also used to support the COUNT and MEDIAN formulas described below.
 
-Background Table:<br>
-![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png)
+<p><strong>Background Table:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png" alt="Job Schedule Type Background Table">
+</p>
 
 Dashboard Implementation:
 ![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
@@ -101,8 +102,9 @@ With a clean list of job types established, I used the following formula to coun
 - Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
 - Note: Relies on the assumption that each job listing has a non-zero salary field
 
-Background Table:<br>
-![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Count_Background_Table.png)
+<p><strong>Background Table:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Count_Background_Table.png" alt="Job Count Background Table">
+</p>
 
 Dashboard Implementation:
 ![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
@@ -161,8 +163,9 @@ Building on the filtered data and job counts, I created three separate `MEDIAN()
 
 Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the dashboard.
 
-Background Table:<br>
-![Filtered_Job_Schedule_Type_BG_Table](assets/Excel_Project_1_DashBoard_Median_Salary_Background_Table.png)
+<p><strong>Background Table:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Median_Salary_Background_Table.png" alt="Median Salary Background Table">
+</p>
 
 Dashboard Implementation:
 ![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Median_Salary_Dashboard_Output.png)
