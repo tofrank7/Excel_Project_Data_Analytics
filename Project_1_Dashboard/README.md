@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This data jobs salary dashboard was created to help job seekers, like myself, investigate salaries for their desired jobs and ensure they are being compensated fairly.
+This data jobs salary dashboard was created to help job seekers, like myself, investigate salaries for their target roles and ensure they’re being fairly compensated.
 
 The dataset was provided by Luke Barousse as part of his Excel for Data Analytics course. It contains real-world salary data for a variety of data-related roles, including information on job titles, average annual salaries, countries, work schedules, and essential skills.
 
@@ -96,7 +96,7 @@ With a clean list of job types established, I used the following formula to coun
 
 #### Median Salary Calculations
 
-Building on the filtered data and job counts, I created three separate MEDIAN() formulas to calculate salary insights based on user-selected criteria. These formulas power the bar and map charts in the dashboard.
+Building on the filtered data and job counts, I created three separate `MEDIAN()` formulas to calculate salary insights based on user-selected criteria. These formulas power the bar and map charts in the dashboard.
 
 **1. Median Salary by Job Title**
 
@@ -146,7 +146,7 @@ Building on the filtered data and job counts, I created three separate MEDIAN() 
 - Filters: Selected job schedule type, job title, and country
 - Output: Used in the bar chart comparing salary by job type
 
-Note: type, title, country, and A2 refer to user-selected values in the dashboard.
+Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the dashboard.
 
 #### Dynamic Highlighting in Bar Charts
 
@@ -156,11 +156,11 @@ To improve how users interpret the salary data from the calculations above, I us
 =IF($D2<>title,$E2,NA())  ← Light bars for non-selected values  
 =IF($D2=title,$E2,NA())   ← Dark bar for selected value
 ```
-- $D2 contains the current job title in the sorted list
-- title refers to the user’s selected job title from the dashboard
-- E2 is the corresponding median salary
+- `$D2` contains the current job title in the sorted list
+- `title` refers to the user’s selected job title from the dashboard
+- `E2` is the corresponding median salary
 
-When these formulas are used as separate data series in a chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
+When these formulas are used as two separate data series in a bar chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
 
 ### Data Validation
 
