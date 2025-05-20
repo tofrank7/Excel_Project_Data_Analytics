@@ -11,7 +11,7 @@ The goal of this project was to analyze this dataset and design a functional, in
 ### Dashboard File
 
 My final dashboard file is located here:  
-[Excel_Project_1_Dashboard.xlsx](Project_1_Dashboard/Excel_Project_1_Dashboard.xlsx)
+[Excel_Project_1_Dashboard.xlsx](Excel_Project_1_Dashboard.xlsx)
 
 ### Excel Skills Used
 
