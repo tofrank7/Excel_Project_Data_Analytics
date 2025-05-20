@@ -80,8 +80,9 @@ This cleaned list is also used to support the COUNT and MEDIAN formulas describe
 <img src="assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png" alt="Job Schedule Type Background Table">
 </p>
 
-Dashboard Implementation:
-![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
+<p><strong>Dashboard Implementation:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png" alt="Job Schedule Type Dashboard Implementation">
+</p>
 
 #### Job Count Based on Multiple Criteria
 
@@ -106,8 +107,9 @@ With a clean list of job types established, I used the following formula to coun
 <img src="assets/Excel_Project_1_DashBoard_Count_Background_Table.png" alt="Job Count Background Table">
 </p>
 
-Dashboard Implementation:
-![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png)
+<p><strong>Dashboard Implementation:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png" alt="Job Count Dashboard Implementation">
+</p>
 
 #### Median Salary Calculations
 
@@ -167,8 +169,9 @@ Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the 
 <img src="assets/Excel_Project_1_DashBoard_Median_Salary_Background_Table.png" alt="Median Salary Background Table">
 </p>
 
-Dashboard Implementation:
-![Filtered_Job_Schedule_Type_Dashboard_Implementation](assets/Excel_Project_1_DashBoard_Median_Salary_Dashboard_Output.png)
+<p><strong>Dashboard Implementation:</strong><br>
+<img src="assets/Excel_Project_1_DashBoard_Median_Salary_Dashboard_Output.png" alt="Median Salary Dashboard Implementation">
+</p>
 
 #### Dynamic Highlighting in Bar Charts
 
