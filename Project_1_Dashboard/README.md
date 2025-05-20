@@ -1,7 +1,5 @@
 # Excel Salary Dashboard
 
-![Salary_Dashboard.png](path/to/your/screenshot-if-you-have-one)
-
 ## Introduction
 
 This data jobs salary dashboard was created to help job seekers, like myself, investigate salaries for their desired jobs and ensure they are being compensated fairly.
