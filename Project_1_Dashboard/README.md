@@ -1,4 +1,5 @@
 # Excel Salary Dashboard
+![Dashboard_GIF](assets/Excel_Project_1_DashBoard_GIF.gif)
 
 ## Introduction
 
