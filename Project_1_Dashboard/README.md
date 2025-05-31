@@ -67,7 +67,7 @@ This cleaned list is also used to support the `COUNT()` and `MEDIAN()` formulas 
 <img src="assets/Excel_Project_1_DashBoard_Bar_Chart_2.png" alt="Job Schedule Type Dashboard Implementation">
 </p>
 
-#### Job Count Based on Multiple Criteria
+### Job Count Based on Multiple Criteria
 
 With a clean list of job types established, I used the following formula to count how many job listings matched a given combination of job title, country, and schedule type.
 
@@ -94,7 +94,7 @@ With a clean list of job types established, I used the following formula to coun
 <img src="assets/Excel_Project_1_DashBoard_Count_Dashboard_Output.png" alt="Job Count Dashboard Implementation">
 </p>
 
-#### Median Salary Calculations
+### Median Salary Calculations
 
 Building on the filtered data and job counts, I created three separate `MEDIAN()` formulas to calculate salary insights based on user-selected criteria. These formulas power the bar and map charts in the dashboard.
 
@@ -156,7 +156,7 @@ Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the 
 <img src="assets/Excel_Project_1_DashBoard_Median_Salary_Dashboard_Output.png" alt="Median Salary Dashboard Implementation">
 </p>
 
-#### Dynamic Highlighting in Bar Charts
+### Dynamic Highlighting in Bar Charts
 
 To improve how users interpret the salary data from the calculations above, I used helper columns to implement visual highlighting in the bar charts. This approach emphasizes the selected job title or schedule type using a darker color bar, while showing all other categories in lighter colors for context.
 
@@ -170,7 +170,7 @@ To improve how users interpret the salary data from the calculations above, I us
 
 When these formulas are used as two separate data series in a bar chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
 
-### Data Validation
+## Data Validation
 
 To ensure user inputs remain consistent and accurate throughout the dashboard, data validation was applied to key dropdown selections, including Job Title, Country, and Job Schedule Type.
 
