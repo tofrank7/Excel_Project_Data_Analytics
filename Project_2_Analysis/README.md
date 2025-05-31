@@ -13,8 +13,6 @@ It includes key information such as:
 * Annual salary
 * Required skills
 
----
-
 ## Queries Created
 
 To prepare the data for analysis, I used Power Query to create two separate queries from the original Excel file:
@@ -41,8 +39,6 @@ Created by referencing `data_jobs_salary` and transformed as follows:
 
 Both queries were loaded to the **Data Model** and connected via the `job_id` index to enable skill-to-job mapping in PivotTables and DAX.
 
----
-
 ## Question 1: Do more skills get you better pay?
 
 ### Approach
@@ -58,8 +54,6 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Positive correlation: More skills are generally associated with higher salaries
 * Roles like **Business Analyst**, which list fewer skills, tend to pay less
 * Specialization appears to drive salary growth
-
----
 
 ## Question 2: What's the median salary for data jobs in different regions?
 
@@ -79,8 +73,6 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Some job titles (e.g. Senior Data Scientist and Senior Data Engineer) have high median salaries globally
 * Countries like El Salvador show fewer job titles, indicating a smaller market or a smaller dataset sample for that country.
 * These insights are useful for setting expectations in career planning and for salary benchmarking in global job markets
-
----
 
 ## Question 3: What are the top skills of data professionals?
 
@@ -109,8 +101,6 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * SQL and Excel are the most frequently requested skills for US Data Analyst roles
 * Skill Likelihood percentages represent demand across all job postings (not a total of 100% because a single job can list multiple skills)
 * Knowing which skills are most valued based on actual market demand (not just assumptions) helps job seekers prioritize their learning path
-
----
 
 ## Question 4: What’s the pay of the top 10 skills?
 
@@ -144,8 +134,6 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * SQL has the highest demand, with solid median pay
 * Skills like Word and PowerPoint are less valued in high-paying roles
 * This chart helps visualize where to invest time based on salary and demand
-
----
 
 ## Conclusion
 
