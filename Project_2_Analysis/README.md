@@ -4,7 +4,7 @@
 
 This project is part of my transition into the field of data analytics. As someone coming from a marketing background, I wanted to sharpen my technical skills in Excel and use real-world data to uncover actionable insights.
 
-The dataset—provided by Luke Barousse in his Excel for Data Analytics course—includes 2023 job listings for data roles across multiple countries. It captures information such as job title, salary, country, and required skills.
+The dataset, provided by Luke Barousse in his Excel for Data Analytics course, includes 2023 job listings for data roles across multiple countries. It captures information such as job title, salary, country, and required skills.
 
 In this project, I aim to answer four core questions:
 1. Do more skills lead to higher salaries?
