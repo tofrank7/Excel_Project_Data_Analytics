@@ -45,19 +45,13 @@ My final dashboard file is located here:
 
 ### Filtered List of Job Schedule Types
 
-To support dynamic filtering and data validation, a cleaned list of job schedule types was generated using the `FILTER()` function. This ensured dropdowns and formulas only referenced valid, distinct schedule types.
-
-**Filtered Job Schedule Types Formula**
-
+To support dynamic filtering, I used the `FILTER()` function to clean job schedule data by excluding entries with “and”, zeros, or blanks.
 ```excel
 =FILTER(J2#,NOT(ISNUMBER(SEARCH("and",J2#)))*(J2#<>0))
 ```
-- Purpose: Removes entries that contain the word "and" and excludes blank or zero values
-- Output: A clean list of distinct job types (e.g., Full Time, Contract)
-- Use Case: Supports dashboard filtering and improves dropdown usability
-- Benefit: Ensures that users interact only with valid, meaningful job types
-
-This cleaned list is also used to support the `COUNT()` and `MEDIAN()` formulas described below.
+* **Purpose**: Returns a distinct, clean list of valid job schedule types
+* **Use Case**: Powers dropdown filters and formulas throughout the dashboard
+* **Benefit**: Ensures that users interact only with valid job schedule types
 
 <p><strong>Background Table:</strong><br>
 <img src="assets/Excel_Project_1_DashBoard_Job_Schedule_Type_Background_Table.png" alt="Job Schedule Type Background Table">
@@ -69,8 +63,7 @@ This cleaned list is also used to support the `COUNT()` and `MEDIAN()` formulas 
 
 ### Job Count Based on Multiple Criteria
 
-With a clean list of job types established, I used the following formula to count how many job listings matched a given combination of job title, country, and schedule type.
-
+With a clean list of job schedule types, I used this formula to count listings that match a specific job title, country, and schedule type.
 ```excel
 =COUNT(
  IF(
@@ -81,10 +74,9 @@ With a clean list of job types established, I used the following formula to coun
  )
 )
 ```
-- Filters: Country, job title, and job schedule type
-- Output: Total number of job listings matching selected criteria
-- Use Case: Supports the dashboard by giving users a sense of how common or rare a job type is across different regions and roles
-- Note: Relies on the assumption that each job listing has a non-zero salary field
+* **Purpose**: Counts job listings matching selected filters
+* **Use Case**: Helps gauge how common or rare certain roles and job types are across regions
+- **Note**: Assumes job listings have valid (non-zero) salary data
 
 <p><strong>Background Table:</strong><br>
 <img src="assets/Excel_Project_1_DashBoard_Count_Background_Table.png" alt="Job Count Background Table">
@@ -96,10 +88,9 @@ With a clean list of job types established, I used the following formula to coun
 
 ### Median Salary Calculations
 
-Building on the filtered data and job counts, I created three separate `MEDIAN()` formulas to calculate salary insights based on user-selected criteria. These formulas power the bar and map charts in the dashboard.
+I used three `MEDIAN()` formulas to calculate salaries based on user-selected filters, powering the bar and map charts.
 
 **1. Median Salary by Job Title**
-
 ```excel
 =MEDIAN(
   IF(
@@ -111,11 +102,7 @@ Building on the filtered data and job counts, I created three separate `MEDIAN()
   )
 )
 ```
-- Filters: Selected job title, country, and job schedule type
-- Output: Used in the bar chart comparing salaries by job title
-
 **2. Median Salary by Country**
-
 ```excel
 =MEDIAN(
  IF(
@@ -127,11 +114,7 @@ Building on the filtered data and job counts, I created three separate `MEDIAN()
  )
 )
 ```
-- Filters: Selected country, job title, and schedule type
-- Output: Used in the map chart showing salaries across countries
-
 **3. Median Salary by Job Schedule Type**
-
 ```excel
 =MEDIAN(
   IF(
@@ -143,10 +126,9 @@ Building on the filtered data and job counts, I created three separate `MEDIAN()
   )
 )
 ```
-- Filters: Selected job schedule type, job title, and country
-- Output: Used in the bar chart comparing salary by job type
-
-Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the dashboard.
+* **Filters Used**: Selected job schedule type, job title, and country
+* **Output**: Drives the dashboard’s salary visualizations
+* **Note**: `type`, `title`, `country`, and `A2` refer to user-selected values in the dashboard.
 
 <p><strong>Background Table:</strong><br>
 <img src="assets/Excel_Project_1_DashBoard_Median_Salary_Background_Table.png" alt="Median Salary Background Table">
@@ -157,18 +139,15 @@ Note: `type`, `title`, `country`, and `A2` refer to user-selected values in the 
 </p>
 
 ### Dynamic Highlighting in Bar Charts
-
-To improve how users interpret the salary data from the calculations above, I used helper columns to implement visual highlighting in the bar charts. This approach emphasizes the selected job title or schedule type using a darker color bar, while showing all other categories in lighter colors for context.
-
+I used helper columns to highlight the selected value in bar charts using two formulas: one for light bars (others) and one for the dark bar (selected).
 ```excel
 =IF($D2<>title,$E2,NA())  ← Light bars for non-selected values  
 =IF($D2=title,$E2,NA())   ← Dark bar for selected value
 ```
-- `$D2` contains the current job title in the sorted list
-- `title` refers to the user’s selected job title from the dashboard
-- `E2` is the corresponding median salary
-
-When these formulas are used as two separate data series in a bar chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
+* `$D2` contains the current job title in the sorted list
+* `title` refers to the user’s selected job title from the dashboard
+* `E2` is the corresponding median salary
+* **Purpose**: When these formulas are used as two separate data series in a bar chart, Excel highlights the selected value while still displaying surrounding data—making insights easier to spot without losing overall context.
 
 ## Data Validation
 
