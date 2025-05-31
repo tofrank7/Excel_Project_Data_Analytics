@@ -1,66 +1,49 @@
 # Excel Salary Dashboard
+
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_GIF.gif)
 
 ## Introduction
 
-This data jobs salary dashboard was created to help job seekers, like myself, investigate salaries for their target roles and ensure they’re being fairly compensated.
+This project uses Excel to create an interactive dashboard that helps job seekers explore salary trends for data-related roles by job title, country, and schedule type.
 
-The dataset was provided by Luke Barousse as part of his Excel for Data Analytics course. It contains real-world salary data for a variety of data-related roles, including information on job titles, average annual salaries, countries, work schedules, and essential skills.
+The dataset was provided by Luke Barousse as part of his Excel for Data Analytics course. It includes:
+* Job Titles
+* Salaries (Annual Average)
+* Locations (by Country)
+* Work Schedules (Full-Time, Contract, etc.)
+* Required Skills
 
-The goal of this project was to analyze this dataset and design a functional, interactive dashboard using Excel—equipping users with the ability to filter salary insights by role, location, and job type.
-
-### Excel Skills Used
-
-The following Excel features were used in this project:
-- Charts
-- Formulas and Functions
-- Data Validation
-
-### Data Jobs Dataset
-
-The dataset used for this dashboard includes up-to-date job salary information relevant to data professionals. It features:
-- Job Titles
-- Salaries (Annual Average)
-- Locations (by Country)
-- Work Schedules (Full-Time, Contract, etc.)
-- Required Skills
-
-### Dashboard File
+Tools and Skills Used:
+* Excel Charts (Bar, Map)
+* Formulas: `FILTER()`, `COUNT()`, `MEDIAN()`, `IF()`, `SEARCH()`
+* Data Validation and Dropdowns
 
 My final dashboard file is located here:  
 [Excel_Project_1_Dashboard.xlsx](Excel_Project_1_Dashboard.xlsx)
 
 ## Dashboard Build
 
-### Charts
-
-#### Median Salaries by Job Title – Bar Chart
+### Median Salary by Job Title (Bar Chart)
 ![Median_Salaries_by_Job_Title](assets/Excel_Project_1_DashBoard_Bar_Chart_1.png)
-- Excel Feature: Bar chart with formatted salary values
-- Design Choice: Used a horizontal bar chart for better readability and visual comparison
-- Data Displayed: Median salary by job title
-- Data Organization: Sorted by descending median salary
-- Insight: This chart helps users analyze how salaries differ across job titles based on selected country and schedule type—useful for identifying roles with higher earning potential.
+* **Excel Feature**: Horizontal bar chart with formatted salary values
+* **Design Choice**: Sorted by descending salary for easier comparison
+* **Insight**: Compares compensation across different job titles, helping job seekers identify roles with higher earning potential 
 
-#### Median Salaries by Country – Map Chart
+### Median Salary by Country (Map Chart)
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Map_Chart_1.png)
-- Excel Feature: Excel’s built-in map chart feature
-- Design Choice: Color-coded regions based on salary range
-- Data Displayed: Median salary by country
-- Visual Enhancement: Geographic trends are more apparent at a glance
-- Insight: This map allows users to visualize salary differences across countries for a given role and job type—highlighting regional patterns in compensation.
+* **Excel Feature**: Built-in map chart with color-coded salary ranges
+* **Design Choice**: Visualizes global compensation patterns by shading countries based on median pay
+* **Insight**: Quickly reveals which countries offer higher or lower salaries
 
-#### Median Salaries by Job Schedule Type – Bar Chart
+### Median Salary by Job Schedule Type (Bar Chart)
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Bar_Chart_2.png)
-- Excel Feature: Bar chart
-- Design Choice: Horizontal layout for easy comparison
-- Data Displayed: Median salary by job schedule type (e.g., full-time, part-time, contract)
-- Data Organization: Values sorted for clarity
-- Insight: This chart enables users to compare how compensation varies by job schedule type for a specific role and country—helpful for understanding the relationship between employment type and pay.
+* **Excel Feature**: Horizontal bar chart with formatted salary values
+* **Design Choice**: Sorted by descending salary for easier comparison
+* **Insight**: Compares how employment type (e.g., full-time, part-time, contract) affects compensation, helping job seekers assess trade-offs between flexibility and pay
 
-### Formulas and Functions
+## Key Formulas and Logic
 
-#### Filtered List of Job Schedule Types
+### Filtered List of Job Schedule Types
 
 To support dynamic filtering and data validation, a cleaned list of job schedule types was generated using the `FILTER()` function. This ensured dropdowns and formulas only referenced valid, distinct schedule types.
 
