@@ -27,12 +27,12 @@ Transformations included:
   * **Month** (for aggregation)
   * **Date** (for relationship building)
 * Reorganized columns for clarity
-* Added an `Index` column to serve as a unique job identifier
+* Added a `job_id` index column to serve as a unique job identifier
 
 ### `data_job_skills` (Skills Table)
 
 Created by referencing `data_jobs_salary` and transformed as follows:
-* Removed all columns except `Index` and `skills`
+* Removed all columns except `job_id` and `skills`
 * Split the `skills` column by delimiter (", ")
 * Unpivoted the resulting columns into individual skill rows
 * Trimmed excess whitespace
