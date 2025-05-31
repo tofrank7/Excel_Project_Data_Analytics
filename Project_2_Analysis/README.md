@@ -101,7 +101,7 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 
 * SQL and Excel are the most frequently requested skills for US Data Analyst roles
 * Skill Likelihood percentages represent demand across all job postings (not a total of 100% because a single job can list multiple skills)
-* Knowing which skills are most valued based on actual market demand (not just assumptions) helps job seekers prioritize their learning path
+* This data-driven view of skill frequency helps job seekers prioritize learning based on actual market needs, not assumptions
 
 ## Question 4: What’s the pay of the top 10 skills?
 
@@ -134,7 +134,7 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Python, Oracle, and Tableau are associated with higher salaries
 * SQL has the highest demand, with solid median pay
 * Skills like Word and PowerPoint are less valued in high-paying roles
-* This chart helps visualize where to invest time based on salary and demand
+* When looking at both salary and frequency, skills like SQL strike a balance between strong pay and high demand. While Python offers top pay, it appears in fewer listings, suggesting it may be a secondary investment after mastering foundational tools.
 
 ## Conclusion
 
