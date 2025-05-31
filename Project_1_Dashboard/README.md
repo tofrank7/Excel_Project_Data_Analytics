@@ -76,7 +76,7 @@ With a clean list of job schedule types, I used this formula to count listings t
 ```
 * **Purpose**: Counts job listings matching selected filters
 * **Use Case**: Helps gauge how common or rare certain roles and job types are across regions
-- **Note**: Assumes job listings have valid (non-zero) salary data
+* **Note**: Assumes job listings have valid (non-zero) salary data
 
 <p><strong>Background Table:</strong><br>
 <img src="assets/Excel_Project_1_DashBoard_Count_Background_Table.png" alt="Job Count Background Table">
