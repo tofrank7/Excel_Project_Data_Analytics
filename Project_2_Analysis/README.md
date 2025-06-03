@@ -29,6 +29,8 @@ Transformations included:
 * Reorganized columns for clarity
 * Added a `job_id` index column to serve as a unique job identifier
 
+![query_1](assets/Excel_Project_2_Query_1.png)
+
 ### `data_job_skills` (Skills Table)
 
 Created by referencing `data_jobs_salary` and transformed as follows:
@@ -38,7 +40,11 @@ Created by referencing `data_jobs_salary` and transformed as follows:
 * Trimmed excess whitespace
 * Corrected capitalization for each skill name
 
+![query_2](assets/Excel_Project_2_Query_2.png)
+
 Both queries were loaded to the **Data Model** and connected via the `job_id` index to enable skill-to-job mapping in PivotTables and DAX.
+
+![data_model](assets/Excel_Project_2_Data_Model_PowerPivot.png)
 
 ## Question 1: Do more skills get you better pay?
 
@@ -55,6 +61,8 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Positive correlation: More skills are generally associated with higher salaries
 * Roles like **Business Analyst**, which list fewer skills, tend to pay less
 * Specialization appears to drive salary growth
+
+![do_more_skills_get_you_better_pay](assets/Excel_Project_2_do_more_skills_get_you_better_pay.png)
 
 ## Question 2: What's the median salary for data jobs in different regions?
 
@@ -75,6 +83,8 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Countries like El Salvador show fewer job titles, indicating a smaller market or a smaller dataset sample for that country.
 * These insights are useful for setting expectations in career planning and for salary benchmarking in global job markets
 
+![whats_the_median_salary_for_data_jobs_in_different_regions](assets/Excel_Project_2_whats_the_median_salary_for_data_jobs_in_different_regions.png)
+
 ## Question 3: What are the top skills of data professionals?
 
 ### Approach
@@ -84,8 +94,7 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
   * **Values**: Skill Likelihood = `=DIVIDE([Skill Count], [Job Count])`
   * Slicers: Job Title (Data Analyst) and Country (United States)
 
-#### Skill Likelihood Results
-
+Skill Likelihood Results:
 * SQL: 53%
 * Excel: 41%
 * Tableau: 29%
@@ -103,6 +112,8 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Skill Likelihood percentages represent demand across all job postings (not a total of 100% because a single job can list multiple skills)
 * This data-driven view of skill frequency helps job seekers prioritize learning based on actual market needs, not assumptions
 
+![what_are_the_top_skills_of_data_professionals](assets/Excel_Project_2_what_are_the_top_skills_of_data_professionals.png)
+
 ## Question 4: What’s the pay of the top 10 skills?
 
 ### Approach
@@ -113,8 +124,6 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * Filtered to Top 10 skills by Skill Likelihood
 * Used DAX and the `CROSSFILTER()` function to bring salary data into the skill table:
   * **Median Salary by Skill**: `=CALCULATE([Median Salary], CROSSFILTER(data_jobs_salary[job_id], data_jobs_skills[job_id], Both))`
-
-#### Sample Data (Top 10 Skills)
 
 | Skill      | Median Salary | Skill Likelihood |
 | ---------- | ------------- | ---------------- |
@@ -135,6 +144,8 @@ Both queries were loaded to the **Data Model** and connected via the `job_id` in
 * SQL has the highest demand, with solid median pay
 * Skills like Word and PowerPoint are less valued in high-paying roles
 * When looking at both salary and frequency, skills like SQL strike a balance between strong pay and high demand. While Python offers top pay, it appears in fewer listings, suggesting it may be a secondary investment after mastering foundational tools.
+
+![whats_the_pay_of_the_top_10_skills](assets/Excel_Project_2_whats_the_pay_of_the_top_10_skills.png)
 
 ## Conclusion
 
