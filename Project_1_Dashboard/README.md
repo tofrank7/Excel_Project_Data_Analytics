@@ -155,6 +155,7 @@ Filtered lists were generated using formulas (e.g. `FILTER()`, `SORT()`, and `UN
 * Restricted input to predefined, valid values  
 * Prevented inconsistent or incorrect entries  
 * Ensured formula accuracy and reliable chart updates
+![Data_Validation_GIF](assets/Excel_Project_1_Data_Validation_GIF.gif)
 
 ## Conclusion
 
