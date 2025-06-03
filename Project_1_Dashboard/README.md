@@ -1,4 +1,4 @@
-# Excel Salary Dashboard
+# Excel Project 1: Salary Dashboard
 
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_GIF.gif)
 
