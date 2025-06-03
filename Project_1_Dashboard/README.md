@@ -39,7 +39,7 @@ My final dashboard file is located here:
 ![Dashboard_GIF](assets/Excel_Project_1_DashBoard_Bar_Chart_2.png)
 * **Excel Feature**: Horizontal bar chart with formatted salary values
 * **Design Choice**: Sorted by descending salary for easier comparison
-* **Insight**: Compares how employment type (e.g., full-time, part-time, contract) affects compensation, helping job seekers assess trade-offs between flexibility and pay
+* **Insight**: Compares how employment type (e.g. full-time, part-time, contract) affects compensation, helping job seekers assess trade-offs between flexibility and pay
 
 ## Key Formulas and Logic
 
