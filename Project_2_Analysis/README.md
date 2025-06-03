@@ -42,7 +42,7 @@ Created by referencing `data_jobs_salary` and transformed as follows:
 
 ![query_2](assets/Excel_Project_2_Query_2.png)
 
-Both queries were loaded to the **Data Model** and connected via the `job_id` index to enable skill-to-job mapping in PivotTables and DAX.
+Both queries were loaded to the Data Model and connected via the `job_id` index to enable skill-to-job mapping in PivotTables and DAX.
 
 ![data_model](assets/Excel_Project_2_Data_Model_PowerPivot.png)
 
