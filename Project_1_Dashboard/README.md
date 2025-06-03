@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This project uses Excel to create an interactive dashboard that helps job seekers explore salary trends for data-related roles by job title, country, and schedule type.
+This project uses Excel to create an interactive dashboard that helps job seekers explore salary trends for data-related roles by job title, country, and job schedule type.
 
 The dataset was provided by Luke Barousse as part of his Excel for Data Analytics course. It includes:
 * Job Titles
@@ -151,23 +151,11 @@ I used helper columns to highlight the selected value in bar charts using two fo
 
 ## Data Validation
 
-To ensure user inputs remain consistent and accurate throughout the dashboard, data validation was applied to key dropdown selections, including Job Title, Country, and Job Schedule Type.
-
-**Purpose of Data Validation**
-- Restricts user input to a predefined list of valid options
-- Prevents entry errors or inconsistent data selections
-- Supports dynamic formulas and visuals by maintaining clean, reliable input values
-
-**How It Was Implemented**
-- The cleaned list of job schedule types (created with the `FILTER()` function) was used as the source for the Job Schedule Type dropdown
-- Similar lists were created or referenced for Job Title and Country
-- Excel's Data Validation feature was used to assign these lists to dropdown cells in the dashboard interface
-
-**Impact on Dashboard**
-- Improved usability and interactivity
-- Ensured only valid filters were applied to formulas and charts
-- Reduced risk of formula errors due to invalid or mismatched user input
+Filtered lists were generated using formulas (e.g. `FILTER()`, `SORT()`, and `UNIQUE()`) and applied in data validation rules for dropdowns like Job Title, Country, and Job Schedule Type.
+* Restricted input to predefined, valid values  
+* Prevented inconsistent or incorrect entries  
+* Ensured formula accuracy and reliable chart updates
 
 ## Conclusion
 
-This project showcased how Excel can be used to create dynamic, interactive dashboards for real-world data analysis. Through a combination of formulas, data validation, and chart formatting, I was able to explore and visualize salary trends across job titles, countries, and schedule types—tools I’ll continue to build on in future analytics work.
+This project showcased how Excel can be used to create dynamic, interactive dashboards for real-world data analysis. Through a combination of formulas, data validation, and chart formatting, I was able to explore and visualize salary trends across job titles, countries, and job schedule types—tools I’ll continue to build on in future analytics work.
